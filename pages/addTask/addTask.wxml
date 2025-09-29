@@ -1,0 +1,40 @@
+<!-- 添加/编辑任务页面 -->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="page-title">{{isEdit ? '编辑任务' : '添加任务'}}</text>
+  </view>
+  
+  <!-- 表单区域 -->
+  <view class="form-container">
+    <!-- 任务标题 -->
+    <view class="form-group">
+      <text class="form-label required">任务标题</text>
+      <input class="form-input" type="text" placeholder="请输入任务标题" value="{{task.title}}" bindinput="onTitleInput" focus="{{!isEdit}}"></input>
+    </view>
+    
+    <!-- 任务描述 -->
+    <view class="form-group">
+      <text class="form-label">任务描述</text>
+      <textarea class="form-textarea" placeholder="请输入任务描述（可选）" value="{{task.description}}" bindinput="onDescriptionInput" auto-height></textarea>
+    </view>
+    
+    <!-- 完成状态（仅编辑模式） -->
+    <view class="form-group" wx:if="{{isEdit}}">
+      <text class="form-label">完成状态</text>
+      <view class="switch-group">
+        <text>未完成</text>
+        <switch checked="{{task.completed}}" bindchange="onCompletedChange"></switch>
+        <text>已完成</text>
+      </view>
+    </view>
+    
+    <!-- 错误提示 -->
+    <view class="error-message" wx:if="{{errorMessage}}">{{errorMessage}}</view>
+  </view>
+  
+  <!-- 底部操作按钮 -->
+  <view class="bottom-actions">
+    <button class="save-button" type="primary" bindtap="saveTask">{{isEdit ? '更新' : '保存'}}</button>
+  </view>
+</view>

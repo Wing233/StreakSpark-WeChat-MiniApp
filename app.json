@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/addTask/addTask",
+    "pages/detail/detail",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "每日打卡清单",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#f9f9f9"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#3498db",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "任务列表",
+        "iconPath": "images/list.png",
+        "selectedIconPath": "images/list_selected.png"
+      },
+      {
+        "pagePath": "pages/addTask/addTask",
+        "text": "添加任务",
+        "iconPath": "images/add.png",
+        "selectedIconPath": "images/add_selected.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "images/about.png",
+        "selectedIconPath": "images/about_selected.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "networkTimeout": {
+    "request": 30000
+  }
+}

@@ -1,0 +1,59 @@
+<!-- 任务详情页面 -->
+<view class="container">
+  <!-- 页面头部 -->
+  <view class="page-header">
+    <text class="page-title">任务详情</text>
+  </view>
+  
+  <!-- 任务详情内容 -->
+  <view class="detail-content" wx:if="{{task}}">
+    <!-- 完成状态 -->
+    <view class="status-section">
+      <view class="status-circle {{task.completed ? 'completed' : 'pending'}}">
+        <text class="status-icon" wx:if="{{task.completed}}">✓</text>
+      </view>
+      <text class="status-text">{{task.completed ? '已完成' : '未完成'}}</text>
+    </view>
+    
+    <!-- 任务标题 -->
+    <view class="detail-section">
+      <text class="section-label">任务标题</text>
+      <text class="task-title">{{task.title}}</text>
+    </view>
+    
+    <!-- 任务描述 -->
+    <view class="detail-section" wx:if="{{task.description}}">
+      <text class="section-label">任务描述</text>
+      <text class="task-description">{{task.description}}</text>
+    </view>
+    
+    <!-- 任务时间信息 -->
+    <view class="detail-section">
+      <text class="section-label">创建时间</text>
+      <text class="time-info">{{task.formattedCreatedAt || '暂无时间'}}</text>
+    </view>
+    
+    <view class="detail-section" wx:if="{{task.completedAt}}">
+      <text class="section-label">完成时间</text>
+      <text class="time-info">{{task.formattedCompletedAt || '暂无时间'}}</text>
+    </view>
+    
+    <view class="detail-section" wx:if="{{task.updatedAt}}">
+      <text class="section-label">更新时间</text>
+      <text class="time-info">{{task.formattedUpdatedAt || '暂无时间'}}</text>
+    </view>
+  </view>
+  
+  <!-- 加载中状态 -->
+  <view class="loading-state" wx:else>
+    <text>加载中...</text>
+  </view>
+  
+  <!-- 底部操作按钮 -->
+  <view class="bottom-actions" wx:if="{{task}}">
+    <button class="primary-button" type="primary" bindtap="toggleTaskCompletion">
+      {{task.completed ? '取消完成' : '标记完成'}}
+    </button>
+    <button class="danger-button" type="warn" bindtap="deleteTask">删除任务</button>
+  </view>
+</view>

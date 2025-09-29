@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "openapi": [],
+    "databases": [
+      {
+        "permission": "readWrite",
+        "collectionName": "tasks"
+      }
+    ],
+    "storage": [],
+    "cloudfunctions": []
+  },
+  "runtime": "Nodejs12",
+  "memoryMB": 128,
+  "timeoutSeconds": 3,
+  "installDependency": true
+}

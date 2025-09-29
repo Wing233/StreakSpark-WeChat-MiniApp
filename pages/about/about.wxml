@@ -1,0 +1,81 @@
+<!-- 关于页面 -->
+<view class="container">
+  <!-- 应用Logo和基本信息 -->
+  <view class="header-section">
+    <view class="logo-wrapper">
+      <image class="app-logo" src="/images/logo.png" mode="aspectFit"></image>
+    </view>
+    <text class="app-name">每日打卡清单</text>
+    <text class="app-version">版本 1.0.0</text>
+    <text class="app-slogan">培养好习惯，提高工作学习效率</text>
+  </view>
+
+  <!-- 应用介绍 -->
+  <view class="content-section">
+    <text class="section-title">关于应用</text>
+    <text class="section-text">每日打卡清单是一款帮助您培养良好习惯、追踪日常任务的智能管理工具。通过简单直观的界面，让您轻松规划每日任务，提高工作和学习效率。</text>
+  </view>
+
+  <!-- 功能特点 -->
+  <view class="content-section">
+    <text class="section-title">功能特点</text>
+    <view class="features-list">
+      <view class="feature-item">
+        <icon class="feature-icon" type="success" size="24"></icon>
+        <text class="feature-text">快速创建和管理日常任务</text>
+      </view>
+      <view class="feature-item">
+        <icon class="feature-icon" type="success" size="24"></icon>
+        <text class="feature-text">标记任务完成状态，追踪进度</text>
+      </view>
+      <view class="feature-item">
+        <icon class="feature-icon" type="success" size="24"></icon>
+        <text class="feature-text">自定义任务分类和优先级</text>
+      </view>
+      <view class="feature-item">
+        <icon class="feature-icon" type="success" size="24"></icon>
+        <text class="feature-text">数据云端同步，多设备访问</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据管理 -->
+  <view class="content-section">
+    <text class="section-title">数据管理</text>
+    <view class="data-management">
+      <button class="archive-btn" size="default" type="warn" bindtap="showArchiveConfirm">
+        手动归档数据
+      </button>
+      <text class="data-tip">归档数据将保存历史记录，优化应用性能</text>
+    </view>
+  </view>
+
+  <!-- 联系我们 -->
+  <view class="content-section">
+    <text class="section-title">联系我们</text>
+    <view class="contact-info">
+      <text class="contact-label">如有问题或建议，请联系我们：</text>
+      <text class="contact-email" user-select="true">liubo3724@qq.com</text>
+    </view>
+  </view>
+
+  <!-- 底部信息 -->
+  <view class="footer">
+    <text class="copyright">© 2025 每日打卡清单 版权所有</text>
+  </view>
+
+  <!-- 密码输入弹窗 -->
+  <view class="modal-overlay" wx:if="{{showPasswordModal}}" bindtap="cancelArchive"></view>
+  <view class="modal-container" wx:if="{{showPasswordModal}}" catchtap="">
+    <view class="modal-header">
+      <view class="modal-title">请输入管理员密码</view>
+    </view>
+    <view class="modal-body">
+      <input class="password-input" placeholder="请输入管理员密码" password="true" value="{{password}}" bindinput="onPasswordInput" confirm-type="done"></input>
+    </view>
+    <view class="modal-footer">
+      <button class="cancel-btn" size="mini" bindtap="cancelArchive">取消</button>
+      <button class="confirm-btn" size="mini" type="primary" bindtap="confirmArchive">确认</button>
+    </view>
+  </view>
+</view>

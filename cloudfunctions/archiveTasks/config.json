@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "openapi": [],
+    "databases": [
+      {
+        "permission": "readWrite",
+        "collectionName": "tasks"
+      },
+      {
+        "permission": "readWrite",
+        "collectionName": "archives"
+      }
+    ],
+    "storage": [],
+    "cloudfunctions": []
+  },
+  "runtime": "Nodejs12",
+  "memoryMB": 256,
+  "timeoutSeconds": 120,
+  "installDependency": true,
+  "triggers": [
+    {
+      "name": "dailyArchive",
+      "type": "timer",
+      "config": "0 0 4 * * * *",
+      "enable": true
+    }
+  ]
+}

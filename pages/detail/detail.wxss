@@ -1,0 +1,156 @@
+/* 任务详情页面样式 */
+.container {
+  padding: 30rpx;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 页面头部 */
+.page-header {
+  text-align: center;
+  padding: 30rpx 0 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 1rpx;
+}
+
+/* 详情内容区域 */
+.detail-content {
+  flex: 1;
+}
+
+/* 状态部分 */
+.status-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50rpx;
+  padding: 40rpx;
+  background-color: #f8f8f8;
+  border-radius: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.status-circle {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30rpx;
+}
+
+.status-circle.pending {
+  background-color: #fff3e0;
+  border: 4rpx solid #ff9800;
+}
+
+.status-circle.completed {
+  background-color: #e8f5e9;
+  border: 4rpx solid #4caf50;
+}
+
+.status-icon {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.status-text {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+/* 详情部分 */
+.detail-section {
+  margin-bottom: 40rpx;
+  padding: 32rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.detail-section:active {
+  transform: scale(0.99);
+}
+
+.section-label {
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 12rpx;
+  font-weight: 500;
+}
+
+.task-title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.5;
+}
+
+.task-description {
+  display: block;
+  font-size: 32rpx;
+  color: #666;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.time-info {
+  display: block;
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 加载状态 */
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+  color: #888;
+  font-size: 32rpx;
+}
+
+/* 底部操作按钮 */
+.bottom-actions {
+  margin-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.primary-button,
+.secondary-button,
+.danger-button {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  border-radius: 12rpx;
+}
+
+.primary-button {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.secondary-button {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.danger-button {
+  background-color: #e74c3c;
+  color: #fff;
+}
